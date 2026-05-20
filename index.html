@@ -7,6 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); 
+
+            alert("Thank you for reaching out! I'll get back to you soon.");
+
+            event.target.reset();
+
+            window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                            });
+          }
+    </script>
     
     <div class="main-container">
         <!-- Sidebar -->
@@ -169,7 +183,7 @@ artworks with artist names displayed as interactive cards</p>
                 <h2 class="heading">Contact Me</h2>
                 <div class="line"></div>
                 <!-- The action="#" means the form will reload the page upon submit. -->
-                <form action="#" method="POST">
+                <form action="#" method="POST" onsubmit="handleSubmit(event)">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required placeholder="Your Name">
@@ -182,10 +196,10 @@ artworks with artist names displayed as interactive cards</p>
                         <label for="message">Message</label>
                         <textarea id="message" name="message" rows="5" required placeholder="I'd love to discuss a project..."></textarea>
                     </div>
-                    <button type="submit" id="submitButton">Send Message</button>
+                    <button type="submit" id="submitButton" >Send Message</button>
                 </form>
              </div>
-
+             
         </div> 
     </div>
 </body>
